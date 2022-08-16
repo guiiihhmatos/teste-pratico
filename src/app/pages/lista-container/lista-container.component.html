@@ -1,0 +1,35 @@
+<div class="d-flex flex-column justify-content-center align-items-center tabela">
+
+  <h2 class="my-5">Lista de Containers</h2>
+  <table class="table w-75">
+    <thead>
+      <tr>
+        <th>Cliente</th>
+        <th>Número</th>
+        <th>Tipo</th>
+        <th>Status</th>
+        <th>Categoria</th>
+        <th>Movimentação</th>
+        <th>Data Inicio</th>
+        <th>Data Fim</th>
+        <th rowspan="2"></th>
+      </tr>
+    </thead>
+
+    <tbody *ngFor="let item of container">
+      <tr>
+        <td> {{ item.cliente }} </td>
+        <td> {{ item.numeroContainer }} </td>
+        <td> {{ item.tipo }} </td>
+        <td> {{ item.status }} </td>
+        <td> {{ item.categoria }} </td>
+        <td> {{ item.movimentacao }} </td>
+        <td> {{ item.dataInicio }} </td>
+        <td> {{ item.dataFim }} </td>
+        <td><button type="button" class="btn btn-success">Editar</button></td>
+        <td><button type="button" class="btn btn-danger">Excluir</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
