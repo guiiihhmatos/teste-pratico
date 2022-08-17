@@ -1,6 +1,6 @@
 <div class="formularioRegistro">
 
-  <h2 class="my-5">Cadastrar Container</h2>
+  <h2 class="my-5">Editar Container</h2>
 
   <form [formGroup]="containerForm" (ngSubmit)="onSaveContainer()" class="d-flex flex-column align-items-center">
 
@@ -13,7 +13,7 @@
     <div class="form-group w-75 my-2">
       <label>Número do Container</label>
       <input type="text" formControlName="numeroContainer" class="form-control" placeholder="EX : TEST1234567">
-      <div class="form-error" *ngIf="containerForm.controls['numeroContainer'].touched && containerForm.controls['numeroContainer'].hasError('required')">
+      <!-- <div class="form-error" *ngIf="containerForm.controls['numeroContainer'].touched && containerForm.controls['numeroContainer'].hasError('required')">
         Digite o Número do container.
       </div>
       <div class="form-error" *ngIf="containerForm.controls['numeroContainer'].touched && containerForm.controls['numeroContainer'].hasError('minlength')">
@@ -21,7 +21,7 @@
       </div>
       <div class="form-error" *ngIf="containerForm.controls['numeroContainer'].touched && containerForm.controls['numeroContainer'].hasError('maxlength')">
         Número de container muito grande.
-      </div>
+      </div> -->
 
     </div>
 
@@ -83,7 +83,7 @@
     </div>
 
 
-    <button type="submit" class="btn btn-primary my-5 w-25" [disabled]="containerForm.invalid"> Cadastrar </button>
+    <button type="submit" class="btn btn-primary my-5 w-25" [disabled]="containerForm.invalid"> Editar </button>
 
   </form>
 

@@ -1,6 +1,8 @@
 import { ContainerService } from './../../services/container.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Container } from 'src/app/model/container';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-formulario-container',
@@ -13,7 +15,8 @@ export class FormularioContainerComponent implements OnInit {
   constructor
   (
     private containerService: ContainerService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private roteador: Router
   )
   {
     this.containerForm = this.formBuilder.group({
@@ -36,10 +39,11 @@ export class FormularioContainerComponent implements OnInit {
   {
     this.containerService.onSaveContainers(this.containerForm.value).subscribe(value => {
 
-      console.log(value)
+      this.roteador.navigate(['lista-containers'])
     },
     error => {
       console.error(error)
     })
   }
+
 }

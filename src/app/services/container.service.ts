@@ -25,4 +25,9 @@ export class ContainerService {
   {
     return this.httpClient.get<any[]>(this.apiUrl)
   }
+
+  onDeleteContainer(id : any) : Observable<any>
+  {
+    return this.httpClient.delete<any>(this.apiUrl + "delete/" + id)
+  }
 }

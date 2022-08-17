@@ -9,6 +9,7 @@ import { FormularioContainerComponent } from './pages/formulario-container/formu
 import { ListaContainerComponent } from './pages/lista-container/lista-container.component';
 import { HttpClientModule } from '@angular/common/http'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EditarContainerComponent } from './pages/editar-container/editar-container.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HeaderComponent,
     FooterComponent,
     FormularioContainerComponent,
-    ListaContainerComponent
+    ListaContainerComponent,
+    EditarContainerComponent
   ],
   imports: [
     BrowserModule,

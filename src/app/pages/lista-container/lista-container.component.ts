@@ -1,6 +1,7 @@
 import { ContainerService } from './../../services/container.service';
 import { Component, OnInit } from '@angular/core';
 import { Container } from 'src/app/model/container';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-lista-container',
@@ -10,9 +11,14 @@ import { Container } from 'src/app/model/container';
 export class ListaContainerComponent implements OnInit {
 
   container: Container[] = []
+
+  TotalImportacoes: number = 0
+  TotalExportacoes: number = 0
+
   constructor
   (
-    private containerService: ContainerService
+    private containerService: ContainerService,
+    private roteador: Router
   )
   {
 
@@ -27,6 +33,45 @@ export class ListaContainerComponent implements OnInit {
     this.containerService.onGetAllContainers().subscribe(value => {
 
       this.container = value
+
+      this.onGetAllImportacoes()
+      this.onGetAllExportacoes()
     })
   }
+
+  onDelete(id: any)
+  {
+    this.containerService.onDeleteContainer(id).subscribe(value => {
+
+      this.onList()
+    })
+  }
+
+  onEdit(container: Container) {
+    this.roteador.navigate(['lista-containers/editar'], {state:{data:container}})
+  }
+
+
+  onGetAllImportacoes()
+  {
+    for (const element of this.container)
+    {
+      switch(element.categoria.toUpperCase())
+        {
+          case 'IMPORTACAO':
+            this.TotalImportacoes++
+            break
+
+          case 'EXPORTACAO':
+            this.TotalExportacoes++
+            break
+        }
+    }
+  }
+
+  onGetAllExportacoes()
+  {
+
+  }
+
 }

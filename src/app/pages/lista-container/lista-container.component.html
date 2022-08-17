@@ -24,12 +24,17 @@
         <td> {{ item.status }} </td>
         <td> {{ item.categoria }} </td>
         <td> {{ item.movimentacao }} </td>
-        <td> {{ item.dataInicio }} </td>
+        <td> {{ item.dataInicio}} </td>
         <td> {{ item.dataFim }} </td>
-        <td><button type="button" class="btn btn-success">Editar</button></td>
-        <td><button type="button" class="btn btn-danger">Excluir</button></td>
+        <td><button type="button" class="btn btn-success" (click)="onEdit(item)">Editar</button></td>
+        <td><button type="button" class="btn btn-danger" (click)="onDelete(item.id)">Excluir</button></td>
       </tr>
     </tbody>
   </table>
 
+</div>
+
+<div class="my-5">
+  <h1>Total exportações : {{ TotalExportacoes }} </h1>
+  <h1>Total importações : {{ TotalImportacoes }} </h1>
 </div>
