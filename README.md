@@ -1,10 +1,10 @@
 # TestePratico
 
-##Ferramentas utilizadas:
+## Ferramentas utilizadas:
 
 #### PostgreSQL, Java, springboot, Maven, Angular CLI e Postman.
 
-##Back end está na pasta Teste-pratico
+## Back end está na pasta Teste-pratico
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.3.
 
