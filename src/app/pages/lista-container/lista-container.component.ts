@@ -15,6 +15,7 @@ export class ListaContainerComponent implements OnInit {
   TotalImportacoes: number = 0
   TotalExportacoes: number = 0
 
+
   constructor
   (
     private containerService: ContainerService,
@@ -34,8 +35,7 @@ export class ListaContainerComponent implements OnInit {
 
       this.container = value
 
-      this.onGetAllImportacoes()
-      this.onGetAllExportacoes()
+      this.onGetAllMovimentacoes()
     })
   }
 
@@ -52,7 +52,7 @@ export class ListaContainerComponent implements OnInit {
   }
 
 
-  onGetAllImportacoes()
+  onGetAllMovimentacoes()
   {
     for (const element of this.container)
     {
@@ -69,9 +69,5 @@ export class ListaContainerComponent implements OnInit {
     }
   }
 
-  onGetAllExportacoes()
-  {
-
-  }
 
 }
